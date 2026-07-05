@@ -2576,6 +2576,66 @@ paths:
       $ref: "resources/uptime/delete_alert.yml"
 
  
+  /v2/gen-ai/agent-workspace-deployment-releases/{uuid}:
+    get:
+      $ref: 'resources/gen-ai/genai_get_agent_workspace_deployment_release.yml'
+
+
+  /v2/gen-ai/agent-workspace-deployments/file_upload_presigned_url:
+    post:
+      $ref: 'resources/gen-ai/genai_create_agent_deployment_file_upload_presigned_urls.yml'
+
+
+  /v2/gen-ai/agent-workspace-deployments/{agent_deployment_uuid}/releases:
+    get:
+      $ref: 'resources/gen-ai/genai_list_agent_workspace_deployment_releases.yml'
+
+
+  /v2/gen-ai/agent-workspaces:
+    get:
+      $ref: 'resources/gen-ai/genai_list_agent_workspaces.yml'
+
+    post:
+      $ref: 'resources/gen-ai/genai_create_agent_workspace.yml'
+
+
+  /v2/gen-ai/agent-workspaces/{agent_workspace_name}:
+    get:
+      $ref: 'resources/gen-ai/genai_get_agent_workspace.yml'
+
+    delete:
+      $ref: 'resources/gen-ai/genai_delete_agent_workspace.yml'
+
+
+  /v2/gen-ai/agent-workspaces/{agent_workspace_name}/agent-deployments:
+    get:
+      $ref: 'resources/gen-ai/genai_list_agent_workspace_deployments.yml'
+
+    post:
+      $ref: 'resources/gen-ai/genai_create_agent_workspace_deployment.yml'
+
+
+  /v2/gen-ai/agent-workspaces/{agent_workspace_name}/agent-deployments/{agent_deployment_name}:
+    get:
+      $ref: 'resources/gen-ai/genai_get_agent_workspace_deployment.yml'
+
+    put:
+      $ref: 'resources/gen-ai/genai_update_agent_workspace_deployment.yml'
+
+    delete:
+      $ref: 'resources/gen-ai/genai_delete_agent_workspace_deployment.yml'
+
+
+  /v2/gen-ai/agent-workspaces/{agent_workspace_name}/agent-deployments/{agent_deployment_name}/logs:
+    get:
+      $ref: 'resources/gen-ai/genai_get_agent_workspace_deployment_runtime_logs.yml'
+
+
+  /v2/gen-ai/agent-workspaces/{agent_workspace_name}/agent-deployments/{agent_deployment_name}/releases:
+    post:
+      $ref: 'resources/gen-ai/genai_create_agent_workspace_deployment_release.yml'
+
+
   /v2/gen-ai/agents:
     get:
       $ref: 'resources/gen-ai/genai_list_agents.yml'
@@ -2709,6 +2769,20 @@ paths:
     get:
       $ref: 'resources/gen-ai/genai_list_agents_by_anthropic_key.yml'
 
+
+  /v2/gen-ai/custom_evaluation_metrics:
+    post:
+      $ref: 'resources/gen-ai/genai_create_custom_evaluation_metric.yml'
+
+
+  /v2/gen-ai/custom_evaluation_metrics/{metric_uuid}:
+    put:
+      $ref: 'resources/gen-ai/genai_update_custom_evaluation_metric.yml'
+
+    delete:
+      $ref: 'resources/gen-ai/genai_delete_custom_evaluation_metric.yml'
+
+
   /v2/gen-ai/custom_models:
     get:
       $ref: 'resources/gen-ai/genai_list_custom_models.yml'
@@ -2722,6 +2796,7 @@ paths:
   /v2/gen-ai/custom_models/{uuid}:
     get:
       $ref: 'resources/gen-ai/genai_get_custom_model.yml'
+
     delete:
       $ref: 'resources/gen-ai/genai_delete_custom_model.yml'
 
@@ -2730,6 +2805,10 @@ paths:
     patch:
       $ref: 'resources/gen-ai/genai_update_custom_model_metadata.yml'
 
+
+  /v2/gen-ai/custom_vpcs:
+    get:
+      $ref: 'resources/gen-ai/genai_list_custom_vpcs.yml'
 
 
   /v2/gen-ai/evaluation_datasets:
@@ -2755,21 +2834,14 @@ paths:
       $ref: 'resources/gen-ai/genai_get_evaluation_dataset_download_url.yml'
 
 
+  /v2/gen-ai/evaluation_metric_runs:
+    post:
+      $ref: 'resources/gen-ai/genai_run_metrics_only_evaluation.yml'
+
 
   /v2/gen-ai/evaluation_metrics:
     get:
       $ref: 'resources/gen-ai/genai_list_evaluation_metrics.yml'
-
-
-  /v2/gen-ai/custom_evaluation_metrics:
-    post:
-      $ref: 'resources/gen-ai/genai_create_custom_evaluation_metric.yml'
-
-  /v2/gen-ai/custom_evaluation_metrics/{metric_uuid}:
-    put:
-      $ref: 'resources/gen-ai/genai_update_custom_evaluation_metric.yml'
-    delete:
-      $ref: 'resources/gen-ai/genai_delete_custom_evaluation_metric.yml'
 
 
   /v2/gen-ai/evaluation_runs:
@@ -2886,6 +2958,11 @@ paths:
       $ref: 'resources/gen-ai/genai_delete_knowledge_base.yml'
 
 
+  /v2/gen-ai/knowledge_bases/{uuid}/cluster_health:
+    get:
+      $ref: 'resources/gen-ai/genai_get_knowledge_base_cluster_health.yml'
+
+
   /v2/gen-ai/model_evaluation/datasets/file_upload_presigned_urls:
     post:
       $ref: 'resources/gen-ai/genai_create_model_eval_dataset_upload_presigned_urls.yml'
@@ -2924,6 +3001,9 @@ paths:
     delete:
       $ref: 'resources/gen-ai/genai_delete_model_evaluation_run.yml'
 
+    patch:
+      $ref: 'resources/gen-ai/genai_update_model_evaluation_run.yml'
+
 
   /v2/gen-ai/model_evaluation_runs/{eval_run_uuid}/cancel:
     put:
@@ -2961,6 +3041,11 @@ paths:
       $ref: 'resources/gen-ai/genai_regenerate_model_api_key.yml'
 
 
+  /v2/gen-ai/models/api_keys/{uuid}/usage:
+    get:
+      $ref: 'resources/gen-ai/genai_get_serverless_inference_usage.yml'
+
+
   /v2/gen-ai/models/catalog:
     get:
       $ref: 'resources/gen-ai/genai_list_model_catalog.yml'
@@ -2969,6 +3054,8 @@ paths:
   /v2/gen-ai/models/catalog/{id}:
     get:
       $ref: 'resources/gen-ai/genai_get_model_catalog_card.yml'
+
+
   /v2/gen-ai/models/routers:
     get:
       $ref: 'resources/gen-ai/genai_list_model_routers.yml'
@@ -3001,6 +3088,12 @@ paths:
   /v2/gen-ai/oauth2/dropbox/tokens:
     post:
       $ref: 'resources/gen-ai/genai_create_oauth2_dropbox_tokens.yml'
+
+
+  /v2/gen-ai/oauth2/google/tokens:
+    post:
+      $ref: 'resources/gen-ai/genai_create_oauth2_google_tokens.yml'
+
 
   /v2/gen-ai/oauth2/url:
     get:
@@ -3049,6 +3142,16 @@ paths:
   /v2/gen-ai/scheduled-indexing/{uuid}:
     delete:
       $ref: 'resources/gen-ai/genai_delete_scheduled_indexing.yml'
+
+
+  /v2/gen-ai/traces:
+    post:
+      $ref: 'resources/gen-ai/genai_create_traces.yml'
+
+
+  /v2/gen-ai/tracing_tokens/{agent_workspace_uuid}/{agent_deployment_name}:
+    get:
+      $ref: 'resources/gen-ai/genai_get_tracing_service_jwt_token.yml'
 
 
   /v2/gen-ai/workspaces:
