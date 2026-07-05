@@ -2298,8 +2298,8 @@ apiCreateModelEvaluationRunInputPublic:
         all sections are saved). Ignored when `eval_preset_uuid` is set. Use
         `preset_name` to label the saved preset.
       example:
-      - '"PRESET_SAVE_SECTION_CANDIDATE"'
-      - '"PRESET_SAVE_SECTION_METRICS"'
+      - PRESET_SAVE_SECTION_CANDIDATE
+      - PRESET_SAVE_SECTION_METRICS
       items:
         $ref: '#/apiPresetSaveSection'
       type: array
@@ -6355,6 +6355,9 @@ apiModelEvaluationPreset:
         value" apart from "section was not saved" — scalar fields like
         `dataset_uuid` or `candidate_system_prompt` are always emitted as the
         empty string when the section was not saved.
+      example:
+      - PRESET_SAVE_SECTION_CANDIDATE
+      - PRESET_SAVE_SECTION_METRICS
       items:
         $ref: '#/apiPresetSaveSection'
       type: array
