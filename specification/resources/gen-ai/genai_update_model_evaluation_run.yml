@@ -1,5 +1,5 @@
 description: To update a model evaluation run's display name, send a PATCH request
-  to `/v2/genai/model_evaluation_runs/{eval_run_uuid}`.
+  to `/v2/gen-ai/model_evaluation_runs/{eval_run_uuid}`.
 operationId: genai_update_model_evaluation_run
 parameters:
 - description: |-
