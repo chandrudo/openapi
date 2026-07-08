@@ -42,7 +42,7 @@ responses:
     $ref: ../../shared/responses/unexpected_error.yml
 security:
 - bearer_auth:
-  - genai:default
+  - genai:update
 summary: Update Model Evaluation Run
 tags:
 - GradientAI Platform
